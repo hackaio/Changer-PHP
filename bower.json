@@ -1,0 +1,25 @@
+{
+  "name": "sims",
+  "description": "school information management system",
+  "main": "index.php",
+  "keywords": [
+    "edtech",
+    "edasp",
+    "sims",
+    "swap"
+  ],
+  "authors": [
+    "abdulbasit rubeiyya",
+    "vicent kwambiana"
+  ],
+  "license": "edtech",
+  "homepage": "http://edtech.co.tz",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
