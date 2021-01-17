@@ -1,4 +1,8 @@
+<?php
 
+$msg=$_GET['msg'];
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +68,12 @@
     <!-- /.login-logo -->
 	<div class="front face">
         <div class="row login-box-body">
-            <div class="login-box-msg">LOGIN SCREEN</div>
+            <div class="login-box-msg">
+            <?php 
+            if (isset($msg)){
+                echo "<b style='color:red'>" .$msg. "</b>";
+            }else{echo 'LOGIN SCREEN';}
+            ?></div>
             <div class="has-feedback " style="text-align:center;">
             </div>
             <div class="hidden-sm hidden-xs col-lg-4 col-md-4 col-sm-12" style="padding: 1em">
@@ -76,7 +85,7 @@
                 <input type="hidden" name="_token" value="AVCA72xVMqU7xklE2AyzfB87PzCjcrfge1LseYQy">
 
                 <div class="input-container">                                     
-                    <input type="text" class="form-control txtuppercase" name="userName" value="" placeholder="phone"><i class="fa fa-phone icon"></i> 
+                    <input type="int" class="form-control txtuppercase" name="userName" value="" placeholder="phone"><i class="fa fa-phone icon"></i> 
                 </div>
 
                 <div class="form-group">
@@ -107,7 +116,7 @@
                 </div>
 
                 <div class="input-container"> 
-                    <input type="password" class="form-control" placeholder="New Password" name="password">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
                     <i class="fa fa-lock icon"></i>
                 </div>
 			   
@@ -115,7 +124,7 @@
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Reset</button>
                 </div> 
             </form>	
-<a href="#" id="flip_content2"><font color="Black">  Login as Client</font></a>			
+<a href="#" id="flip_content2"><font color="Black">  Login as Client</font></a>	| <?php echo $_GET['msg'];?>		
         </div>		
         </div>		 
 <div style="margin:auto;">
