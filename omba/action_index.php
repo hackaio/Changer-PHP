@@ -1,7 +1,7 @@
 <?php
 // Include config file
 require_once "../connect.php";
-$phone = trim($_POST["phone"]);
+$phone = $_SESSION['owner'];
 $input5000 = trim($_POST["5000"]);
 $input2000 = trim($_POST["2000"]);
 $input1000 = trim($_POST["1000"]);
@@ -38,7 +38,7 @@ if($stmt = mysqli_prepare($link, $sql)){
     $total_change = $total ;
     mysqli_stmt_execute($stmt);
     $msg = "eveluy dsuihgdsiu";
-    header("Location: showall.php?msg=".$importantKeys);
+    header("Location: index.php?msg=".$importantKeys);
 
 } else{
     echo "Oops! Something went wrong. Please try again later.";

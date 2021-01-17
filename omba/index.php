@@ -3,7 +3,10 @@
     <?php 
         
         // Include config file
-        require_once "../connect.php";
+		require_once "../connect.php";
+		if(!isset($_SESSION['owner'])){
+			header("Location: /index.php");
+		}
 		
 	?>
 	<head>
@@ -65,7 +68,7 @@
 									<li class="user-header">
 										<img src="../images/favicon.png" class="img-circle" alt="User Image">
 										<p>
-											<?php echo $fname ?> <?php echo $lname ?> <br><br>
+											<?php echo $_SESSION['owner']; ?>  <br><br>
 											<small>Member since <?php echo $date ?></small>
 										</p>
 									</li>
@@ -138,7 +141,7 @@
                             </thead>
                             <tbody>
                                     <?php
-                                    $sql = "select  * from chenji_ledger ";
+                                    $sql = "select  * from chenji_ledger WHERE phone_number = '".$_SESSION['owner']."' ";
                                     if($stmt = mysqli_prepare($link, $sql)){
                                     
                                         $result = mysqli_query($link, $sql);
